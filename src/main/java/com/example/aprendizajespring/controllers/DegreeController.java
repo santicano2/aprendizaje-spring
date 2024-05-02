@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.aprendizajespring.helpers.ViewRouteHelper;
-import com.example.aprendizajespring.models.Degree;
+import com.example.aprendizajespring.models.DegreeModel;
 
 import jakarta.validation.Valid;
 
@@ -19,12 +19,12 @@ import jakarta.validation.Valid;
 public class DegreeController {
 	@GetMapping("/form")
 	public String degree(Model model) {
-		model.addAttribute("degree", new Degree());
+		model.addAttribute("degree", new DegreeModel());
 		return ViewRouteHelper.DEGREE_FORM;
 	}
 
 	@PostMapping("/new")
-	public ModelAndView newdegree(@Valid @ModelAttribute("degree") Degree degree, BindingResult bindingResult) {
+	public ModelAndView newdegree(@Valid @ModelAttribute("degree") DegreeModel degree, BindingResult bindingResult) {
 		ModelAndView mV = new ModelAndView();
 		if (bindingResult.hasErrors()) {
 			mV.setViewName(ViewRouteHelper.DEGREE_FORM);

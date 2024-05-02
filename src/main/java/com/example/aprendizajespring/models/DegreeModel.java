@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Degree {
+public class DegreeModel {
 	private int id;
 	private String name;
 
@@ -19,14 +19,14 @@ public class Degree {
 	@Min(3)
 	private int year;
 
-	public Degree(int id, String name, String institution, int year) {
+	public DegreeModel(int id, String name, String institution, int year) {
 		this.id = id;
 		this.name = name;
 		this.institution = institution;
 		this.year = year;
 	}
 
-	public Degree(String name, String institution, int year) {
+	public DegreeModel(String name, String institution, int year) {
 		this.name = name;
 		this.institution = institution;
 		this.year = year;

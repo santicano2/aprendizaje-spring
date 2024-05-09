@@ -1,5 +1,6 @@
 package com.example.aprendizajespring.controllers;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import com.example.aprendizajespring.services.IDegreeService;
 import jakarta.validation.Valid;
 
 @Controller
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 @RequestMapping("/degrees")
 public class DegreeController {
 
